@@ -26,8 +26,8 @@ const ItemList = () => {
 
   const fetchItems = async () => {
     try {
-      const response = await fetch('/api/items');
-      const data = await response.json();
+  const response = await fetch('https://cha-panela.up.railway.app/api/items');      
+  const data = await response.json();
       setItems(data);
     } catch (error) {
       console.error('Erro ao buscar itens:', error);
@@ -53,7 +53,7 @@ const ItemList = () => {
     }
 
     try {
-      const response = await fetch(`/api/items/${itemToConfirm.id}/escolher`, {
+      const response = await fetch(`https://cha-panela.up.railway.app/api/items/${itemToConfirm.id}/escolher`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ const ItemList = () => {
     }
 
     try {
-      const response = await fetch('/api/items/meus-presentes', {
+     const response = await fetch('https://cha-panela.up.railway.app/api/items/meus-presentes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
